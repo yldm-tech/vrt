@@ -3,7 +3,7 @@ import logo from '@/assets/images/logo.svg'
 import './App.scss'
 
 
-function App() {
+export default function App() {
     const [count, setCount] = useState(0)
 
     return (
@@ -42,5 +42,3 @@ function App() {
         </div>
     )
 }
-
-export default App
