@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import logo from '@/assets/images/logo.svg'
 import './App.scss'
-import { LoginComponent } from '../Login/Login'
+
+import Menu from '@/layouts/Menu/Menu'
+import Content from '@/layouts/Content/Content'
 
 
 export default function App() {
@@ -9,7 +10,8 @@ export default function App() {
 
     return (
         <div className="App">
-            <LoginComponent />
+            <Menu/>
+            <Content/>
         </div>
     )
 }
