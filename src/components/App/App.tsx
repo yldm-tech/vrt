@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './App.scss'
 
-import Menu from '@/layouts/Menu/Menu'
+import AppRouter from '@/components/App/AppRouter'
 import Content from '@/layouts/Content/Content'
 
 
@@ -10,7 +10,7 @@ export default function App() {
 
     return (
         <div className="App">
-            <Menu/>
+            <AppRouter/>
             <Content/>
         </div>
     )
