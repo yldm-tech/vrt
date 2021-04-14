@@ -1,19 +1,21 @@
-import React, { Component } from 'react'
-import Home from '@/views/Home/Home'
-import Task from '@/views/Task/Task'
+import React, { Component, lazy, Suspense } from 'react'
 import { Route } from 'react-router'
 import { Redirect, Switch } from "react-router-dom";
-import NotFound from "@/views/NotFound/NotFound";
-
+import Loading from '@/components/Loading'
+const Home = lazy(() => import('@/views/Home/Home'))
+const Task = lazy(() => import('@/views/Task/Task'))
+const NotFound = lazy(() => import('@/views/NotFound/NotFound'))
 export default class Content extends Component {
     render() {
         return (
-            <Switch>
-                <Route path='/home' component={Home}/>
-                <Route path='/task' component={Task}/>
-                <Route path='/404' component={NotFound}/>
-                <Redirect to='/404'/>
-            </Switch>
+            <Suspense fallback={<Loading/>}>
+                <Switch>
+                    <Route path='/home' component={Home}/>
+                    <Route path='/task' component={Task}/>
+                    <Route path='/404' component={NotFound}/>
+                    <Redirect to='/404'/>
+                </Switch>
+            </Suspense>
         )
     }
 }
