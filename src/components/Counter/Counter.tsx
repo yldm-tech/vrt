@@ -1,30 +1,45 @@
 import React, { Component } from 'react';
-import { createAddAction, createMinusAction } from "@/redux/counter_action";
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
+import { add, minus } from "@/redux/counter_action";
 
 interface Props {
     add: any;
     minus: any;
-    counter: number;
+    count: any;
 }
+
 class Counter extends Component<Props> {
     render() {
-        const {counter,add,minus} = this.props;
+        const {count, add, minus} = this.props;
         return (
             <div>
-                {counter}
-                <div><button onClick={add}>add</button></div>
-                <div><button onClick={minus}>minus</button></div>
+                当前求和为：{count}
+                <div>
+                    <button onClick={() => add(1)}
+                    >add
+                    </button>
+                </div>
+                <div>
+                    <button onClick={() => minus(1)}>minus</button>
+                </div>
             </div>
         );
     }
 }
+
+
 function mapStateToProps(state: any) {
-    return {counter: state.counter};
+    console.log(JSON.stringify(state));
+    return {count: state.count};
 }
+
 const mapDispatchToProps = {
-    add: createAddAction,
-    minus: createMinusAction,
+    add,
+    minus,
 }
-// 创建并暴露一个容器组件
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Counter);

@@ -1,19 +1,19 @@
 import { Add, Minus } from "@/redux/constant";
 
 const initializeState = {
-    counter: 0
+    count: 0
 }
 
 function counterReducer(state = initializeState, action: any) {
-    const {type, data} = action;
+    const {type, payload} = action;
     console.log(state);
     switch (type) {
         case Add:
-            return state.counter + data;
+            return {...state, count: state.count + payload};
         case Minus:
-            return state.counter - data;
+            return {...state, count: state.count - payload};
         default:
-            break;
+            return state;
     }
 }
 
