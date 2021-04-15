@@ -1,41 +1,41 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { add, minus } from "@/redux/counter_action";
+import React, { Fragment } from 'react';
+import { connect, useDispatch } from 'react-redux';
+import { decrement, fetchUserById, increment } from "@/redux/counterSlice";
 
 interface Props {
-    add: any;
-    minus: any;
+    increment: any;
+    decrement: any;
     count: any;
+    users: any;
 }
 
-class Counter extends Component<Props> {
-    render() {
-        const {count, add, minus} = this.props;
-        return (
-            <div>
-                当前求和为：{count}
-                <div>
-                    <button onClick={() => add(1)}
-                    >add
-                    </button>
-                </div>
-                <div>
-                    <button onClick={() => minus(1)}>minus</button>
-                </div>
-            </div>
-        );
+function Counter(props: Props) {
+    const dispatch = useDispatch();
+
+    const getData = () => {
+        dispatch(fetchUserById(1));
     }
+    return (
+        <Fragment>
+            <div>
+                <button onClick={getData}>getData</button>
+            </div>
+        </Fragment>
+    );
 }
 
 
 function mapStateToProps(state: any) {
-    console.log(JSON.stringify(state));
-    return {count: state.count};
+    console.log(state);
+    return {
+        count: state.counter.count,
+        users: state.counter.users
+    };
 }
 
 const mapDispatchToProps = {
-    add,
-    minus,
+    increment,
+    decrement
 }
 
 

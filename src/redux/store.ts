@@ -1,10 +1,23 @@
-import { applyMiddleware, createStore } from 'redux';
-import counterReducer from './counter_reducer';
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { configureStore } from "@reduxjs/toolkit";
+import counterReducer from "@/redux/counterSlice";
+import personReducer from "@/redux/personSlice";
+import bookReducer, { booksAdapter } from '@/redux/bookSlice'
 
-export default createStore(
-    counterReducer,
-    composeWithDevTools(applyMiddleware(thunk))
-);
+const store = configureStore({
+    reducer: {
+        counter: counterReducer,
+        person: personReducer,
+        books: bookReducer,
+    }
+});
 
+
+type RootState = ReturnType<typeof store.getState>
+const booksSelectors = booksAdapter.getSelectors<RootState>(
+    (state: { books: any; }) => state.books
+)
+const allBooks = booksSelectors.selectAll(store.getState())
+
+console.log(allBooks)
+
+export default store;
