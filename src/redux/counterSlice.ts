@@ -8,16 +8,23 @@ export const fetchUserById = createAsyncThunk(
         return response.data
     }
 )
+type CounterState = {
+    loading: boolean,
+    count: number,
+    users: []
+}
+
+const state: CounterState = {
+    loading: false,
+    count: 1,
+    users: []
+};
+
 export const counterSlice = createSlice({
     name: 'counter',
-    initialState: {
-        count: 1,
-        users: []
-    },
+    initialState: state,
     reducers: {
         increment(state, action) {
-            console.log(state);
-            console.log(action); //包含type,payload
             state.count = state.count + 1;
         },
         decrement(state, action) {
@@ -28,7 +35,16 @@ export const counterSlice = createSlice({
         builder.addCase(
             fetchUserById.fulfilled,
             (state: any, action: { payload: { data: any; }; }) => {
+                state.loading = false;
                 state.users = action.payload && action.payload.data;
+            })
+        builder.addCase(
+            fetchUserById.pending, (state: CounterState, action: any) => {
+                state.loading = true;
+            })
+        builder.addCase(
+            fetchUserById.rejected, (state: CounterState, action: any) => {
+                state.loading = false;
             })
     }
 })
