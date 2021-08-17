@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import { Route } from "react-router";
-import NewsDetail from "@/views/Home/News/NewsDetail/NewsDetail";
-import PostsDetail from "@/views/Home/Posts/PostsDetail/PostsDetail";
+import { Link } from 'react-router-dom';
+import { Route } from 'react-router';
+import PostsDetail from '@/views/Home/Posts/PostsDetail';
 
 class Posts extends Component {
     state = {
@@ -11,7 +10,7 @@ class Posts extends Component {
             {'id': 2, 'title': 'posts 2'},
             {'id': 3, 'title': 'posts 3'},
         ]
-    }
+    };
 
     render() {
         const {posts} = this.state;
@@ -28,10 +27,10 @@ class Posts extends Component {
                         >
                             {post.title}
                         </Link>
-                    </li>
+                    </li>;
                 })
                 }
-                <Route path='/home/posts/detail' component={PostsDetail}/>
+                <Route path="/home/posts/detail" component={PostsDetail}/>
             </div>
         );
     }

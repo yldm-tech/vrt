@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import qs from 'qs';
 
 interface Props {
     location: any;

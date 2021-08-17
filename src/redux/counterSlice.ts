@@ -1,13 +1,13 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import userAPI from '@/service/userService';
 
 export const fetchUserById = createAsyncThunk(
     'users/fetchByIdStatus',
     async (userId: number) => {
-        const response = await userAPI.fetchById(userId)
-        return response.data
+        const response = await userAPI.fetchById(userId);
+        return response.data;
     }
-)
+);
 type CounterState = {
     loading: boolean,
     count: number,
@@ -37,17 +37,17 @@ export const counterSlice = createSlice({
             (state: any, action: { payload: { data: any; }; }) => {
                 state.loading = false;
                 state.users = action.payload && action.payload.data;
-            })
+            });
         builder.addCase(
             fetchUserById.pending, (state: CounterState, action: any) => {
                 state.loading = true;
-            })
+            });
         builder.addCase(
             fetchUserById.rejected, (state: CounterState, action: any) => {
                 state.loading = false;
-            })
+            });
     }
-})
+});
 
 export default counterSlice.reducer;
 export const {increment, decrement} = counterSlice.actions;

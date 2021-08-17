@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { HashRouter } from 'react-router-dom';
 
 export default class Header extends Component {
     constructor(props) {
@@ -7,7 +6,6 @@ export default class Header extends Component {
         this.state = {};
 
     }
-
 
     render() {
         return (

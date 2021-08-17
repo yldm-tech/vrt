@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { connect, useDispatch } from 'react-redux';
-import { decrement, fetchUserById, increment } from "@/redux/counterSlice";
+import { decrement, fetchUserById, increment } from '@/redux/counterSlice';
 
 interface Props {
     increment: Function;
@@ -16,7 +16,7 @@ function Counter(props: Props) {
 
     const getData = () => {
         dispatch(fetchUserById(1));
-    }
+    };
     return (
         <Fragment>
             <div>
@@ -30,7 +30,7 @@ function Counter(props: Props) {
                                 <li>{user.last_name}</li>
                                 <img src={user.avatar} alt=""/>
                             </ul>
-                        )
+                        );
                     })
                 }
                 <button onClick={getData}>getData</button>
@@ -52,7 +52,7 @@ function mapStateToProps(state: any) {
 const mapDispatchToProps = {
     increment,
     decrement
-}
+};
 
 
 export default connect(

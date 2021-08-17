@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 export const personSlice = createSlice({
     name: 'person',
@@ -14,6 +14,6 @@ export const personSlice = createSlice({
         },
 
     }
-})
+});
 export default personSlice.reducer;
 export const {changeUser} = personSlice.actions;
