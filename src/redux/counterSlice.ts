@@ -9,9 +9,9 @@ export const fetchUserById = createAsyncThunk(
 	}
 );
 type CounterState = {
-    loading: boolean;
-    count: number;
-    users: [];
+	loading: boolean;
+	count: number;
+	users: [];
 };
 
 const initialState: CounterState = {
@@ -34,7 +34,7 @@ export const counterSlice = createSlice({
 	extraReducers: (builder) => {
 		builder.addCase(
 			fetchUserById.fulfilled,
-			(state: { loading: boolean, users: [] }, action: { payload: { data: [] } }) => {
+			(state: CounterState, action: { payload: any }) => {
 				state.loading = false;
 				state.users = action.payload && action.payload.data;
 			}
