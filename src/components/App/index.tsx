@@ -5,12 +5,12 @@ import Counter from '@/components/User';
 import AppRouter from '@/components/App/AppRouter';
 import Content from '@/layouts/Content';
 
-const App = () => (
-    <div className="App">
-        <AppRouter/>
-        <Content/>
-        <Counter/>
-    </div>
+const App = ():JSX.Element => (
+	<div className="App">
+		<AppRouter/>
+		<Content/>
+		<Counter/>
+	</div>
 );
 
 export default App;

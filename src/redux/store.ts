@@ -3,10 +3,10 @@ import counterReducer from '@/redux/counterSlice';
 import personReducer from '@/redux/personSlice';
 
 const store = configureStore({
-    reducer: {
-        counter: counterReducer,
-        person: personReducer,
-    },
+	reducer: {
+		counter: counterReducer,
+		person: personReducer,
+	},
 });
 
 export default store;

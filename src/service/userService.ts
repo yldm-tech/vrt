@@ -1,8 +1,8 @@
-import axios from 'redaxios';
+import axios, { Response } from 'redaxios';
 
 export default class userService {
-    static async fetchById(userId: number) {
-        console.log(userId);
-        return axios.get('https://reqres.in/api/users');
-    }
+	static async fetchById<T>(userId: number): Promise<Response<T>> {
+		console.log(userId);
+		return axios.get('https://reqres.in/api/users');
+	}
 }

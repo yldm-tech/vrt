@@ -8,12 +8,12 @@ import store from '@/redux/store';
 import '@/i18n';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <Provider store={store}>
-                <App/>
-            </Provider>
-        </BrowserRouter>
-    </React.StrictMode>,
-    document.getElementById('root')
+	<React.StrictMode>
+		<BrowserRouter>
+			<Provider store={store}>
+				<App/>
+			</Provider>
+		</BrowserRouter>
+	</React.StrictMode>,
+	document.getElementById('root')
 );
