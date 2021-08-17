@@ -16,6 +16,11 @@ module.exports = {
 		'ecmaVersion': 12,
 		'sourceType': 'module'
 	},
+	'settings': {
+		'react': {
+			'version': 'detect'
+		}
+	},
 	'globals': {
 		'window': true,
 		'module': true
