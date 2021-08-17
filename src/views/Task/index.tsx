@@ -1,12 +1,20 @@
-import React, { Component } from 'react';
+import React from "react";
+import { useTranslation } from "react-i18next";
 
-export default class Task extends Component {
-    render() {
-        console.log(this.props)
-        return (
-            <div>
-                Task
-            </div>
-        )
-    }
-}
+const Task = () => {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language === "ja" ? "en" : "ja";
+  return (
+    <div>
+      Task
+      <div>
+        <button type="button" onClick={() => i18n.changeLanguage(lang)}>
+          change to {lang}
+        </button>
+      </div>
+      {t("home")}
+    </div>
+  );
+};
+
+export default Task;

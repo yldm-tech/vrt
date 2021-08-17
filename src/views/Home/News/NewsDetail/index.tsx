@@ -1,27 +1,15 @@
-import React, { Component } from 'react';
-import qs from 'qs';
+import React from "react";
+import qs from "qs";
 
 interface Props {
-    location: any;
+  location: any;
 }
 
-class NewsDetail extends Component<Props> {
-
-    constructor(props) {
-        super(props);
-    }
-
-
-    render() {
-        const {search} = this.props.location;
-        console.log(qs.parse(search.slice(1))); // {'id':1 }
-        const params = qs.parse(search.slice(1));
-        return (
-            <div>
-                news {params.id}
-            </div>
-        );
-    }
-}
+const NewsDetail = (props: Props) => {
+  const { search } = props.location;
+  console.log(qs.parse(search.slice(1))); // {'id':1 }
+  const params = qs.parse(search.slice(1));
+  return <div>news {params.id}</div>;
+};
 
 export default NewsDetail;

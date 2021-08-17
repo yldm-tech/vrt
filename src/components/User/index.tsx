@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { decrement, fetchUserById, increment } from '@/redux/counterSlice';
 
@@ -10,7 +10,6 @@ interface Props {
     loading: boolean;
 }
 
-
 function Counter(props: Props) {
     const dispatch = useDispatch();
 
@@ -18,44 +17,35 @@ function Counter(props: Props) {
         dispatch(fetchUserById(1));
     };
     return (
-        <Fragment>
+        <>
             <div>
-                {
-                    props.users.map((user: any) => {
-                        return (
-                            <ul key={user.id}>
-                                <li>{user.id}</li>
-                                <li>{user.email}</li>
-                                <li>{user.first_name}</li>
-                                <li>{user.last_name}</li>
-                                <img src={user.avatar} alt=""/>
-                            </ul>
-                        );
-                    })
-                }
+                {props.users.map((user: any) => (
+                    <ul key={user.id}>
+                        <li>{user.id}</li>
+                        <li>{user.email}</li>
+                        <li>{user.first_name}</li>
+                        <li>{user.last_name}</li>
+                        <img alt="" src={user.avatar}/>
+                    </ul>
+                ))}
                 <button onClick={getData}>getData</button>
             </div>
-        </Fragment>
+        </>
     );
 }
-
 
 function mapStateToProps(state: any) {
     console.log(state);
     return {
         count: state.counter.count,
         users: state.counter.users,
-        loading: state.counter.loading
+        loading: state.counter.loading,
     };
 }
 
 const mapDispatchToProps = {
     increment,
-    decrement
+    decrement,
 };
 
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);

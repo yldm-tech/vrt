@@ -5,15 +5,12 @@ export const personSlice = createSlice({
     initialState: {
         user: {
             name: 'xiaomo',
-            age: 18
-        }
+            age: 18,
+        },
     },
     reducers: {
-        changeUser(state, action) {
-
+        changeUser() {
         },
-
-    }
+    },
 });
 export default personSlice.reducer;
-export const {changeUser} = personSlice.actions;

@@ -6,7 +6,7 @@ const store = configureStore({
     reducer: {
         counter: counterReducer,
         person: personReducer,
-    }
+    },
 });
 
 export default store;

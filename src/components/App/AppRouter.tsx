@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MyNavLink from '@/components/CustomNavLink';
 
+const AppRouter = () => (
+    <div className="container">
+        <div>
+            <MyNavLink to="/home">home</MyNavLink>
+            <MyNavLink to="/task">task</MyNavLink>
+        </div>
+    </div>
+);
 
-export default class AppRouter extends Component {
-    render() {
-        return (
-            <div className="container">
-                <div>
-                    <MyNavLink to="/home">home</MyNavLink>
-                    <MyNavLink to="/task">task</MyNavLink>
-                </div>
-            </div>
-        );
-    }
-}
+export default AppRouter;

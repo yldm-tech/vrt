@@ -1,24 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 interface Props {
-    location: any;
+    location: Location;
 }
 
-class PostsDetail extends Component<Props> {
-
-    constructor(props) {
-        super(props);
-    }
-
-
-    render() {
-        const {id, title} = this.props.location.state || {};
-        return (
-            <div>
-                {id}-{title}
-            </div>
-        );
-    }
+interface Location {
+    id: string;
+    title: string;
 }
+
+const PostsDetail = (props: Props) => {
+    const {id, title} = props.location || {};
+    return (
+        <div>
+            {id}-{title}
+        </div>
+    );
+};
 
 export default PostsDetail;
