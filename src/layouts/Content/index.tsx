@@ -1,13 +1,13 @@
 import React, { lazy, Suspense } from 'react';
 import { Route } from 'react-router';
 import { Redirect, Switch } from 'react-router-dom';
-import Loading from '@/components/Loading';
+import CPartialLoading from '@/components/common/CParticalLoading';
 
 const Home = lazy(() => import('@/views/Home'));
-const Task = lazy(() => import('@/views/Task'));
+const Task = lazy(() => import('@/views/Login'));
 const NotFound = lazy(() => import('@/views/NotFound'));
 export const Content = (): JSX.Element => (
-	<Suspense fallback={<Loading/>}>
+	<Suspense fallback={<CPartialLoading/>}>
 		<Switch>
 			<Route component={Home} path="/home"/>
 			<Route component={Task} path="/task"/>

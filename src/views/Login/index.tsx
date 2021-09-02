@@ -1,15 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Task = (): JSX.Element => {
+const Login = (): JSX.Element => {
 	const {t, i18n} = useTranslation();
 	const lang = i18n.language === 'ja' ? 'en' : 'ja';
 	return (
 		<div>
-            Task
+			Task
 			<div>
 				<button type="button" onClick={() => i18n.changeLanguage(lang)}>
-                    change to {lang}
+					change to {lang}
 				</button>
 			</div>
 			{t('home')}
@@ -17,4 +17,4 @@ const Task = (): JSX.Element => {
 	);
 };
 
-export default Task;
+export default Login;

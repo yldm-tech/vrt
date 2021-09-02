@@ -1,10 +1,10 @@
 import React from 'react';
-import MyNavLink from '@/components/CustomNavLink';
+import { CNavLink } from '@/components/common/CNavLink';
 
-const HomeRouter = ():JSX.Element => (
+const HomeRouter = (): JSX.Element => (
 	<div>
-		<MyNavLink to="/home/news">news</MyNavLink>
-		<MyNavLink to="/home/posts">posts</MyNavLink>
+		<CNavLink to="/home/news">news</CNavLink>
+		<CNavLink to="/home/posts">posts</CNavLink>
 	</div>
 );
 
