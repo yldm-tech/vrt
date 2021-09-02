@@ -1,20 +1,53 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Login = (): JSX.Element => {
+import React from 'react';
+import classNames from 'classnames';
+import { RouteComponentProps } from 'react-router-dom';
+import { CButton } from '@/components/common/CButton';
+import { CInput } from '@/components/common/CInput';
+
+interface Props {
+	history: RouteComponentProps['history'];
+	location: RouteComponentProps['location'];
+	match: RouteComponentProps['match'];
+}
+
+const LoginPage = (props: Props): JSX.Element => {
+
+	const login = (username: string, password: string) => {
+		console.log(username, password);
+		props.history.push('/home');
+	};
 	const {t, i18n} = useTranslation();
 	const lang = i18n.language === 'ja' ? 'en' : 'ja';
+
+
 	return (
-		<div>
-			Task
-			<div>
-				<button type="button" onClick={() => i18n.changeLanguage(lang)}>
-					change to {lang}
-				</button>
+		<div className={classNames('flex', 'justify-center', 'items-center', 'w-screen', 'h-screen', 'bg-gray-100')}>
+			<div id="login-container"
+				 className={classNames('flex', 'justify-center', 'text-center', 'w-96', 'bg-white')}>
+				<div id="login-content">
+					<div id="login-title" className={classNames('my-4')}>
+						{t('Login')}
+					</div>
+					<CInput/>
+					<CInput type={'password'}/>
+
+					<CButton
+						classes={['block', 'w-full', 'h-10', 'bg-red-500', 'text-white', 'my-6']}
+						click={() => {
+							login('xiaomo', 'xiaomo123');
+						}}
+					>
+						SIGN IN
+					</CButton>
+					<CButton click={() => i18n.changeLanguage(lang)}>
+						{`change to ${lang}`}
+					</CButton>
+				</div>
 			</div>
-			{t('home')}
 		</div>
 	);
 };
 
-export default Login;
+export default LoginPage;

@@ -1,16 +1,14 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import News from '@/views/Home/News';
-import HomeRouter from '@/views/Home/HomeRouter';
-import Posts from '@/views/Home/Posts';
+import { CNavLink } from '@/components/common/CNavLink';
+import Task from '@/views/Task';
+import { CHeader } from '@/layouts/Header';
 
 const Home = (): JSX.Element => (
-	<>
-        Home
-		<HomeRouter/>
-		<Route component={News} path="/home/news"/>
-		<Route component={Posts} path="/home/posts"/>
-	</>
+	<div>
+		Home
+		<CHeader/>
+	</div>
 );
 
 export default Home;
