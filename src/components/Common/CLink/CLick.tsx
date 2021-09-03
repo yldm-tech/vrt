@@ -1,25 +1,21 @@
 import React from 'react';
-import classNames from 'classnames';
+import { classnames, TTailwind } from 'tailwindcss-classnames';
 
 export interface CLinkProps {
 	children: string;
-	classes?: string[];
+	classes?: TTailwind;
 	url: string;
 	hasBorder: boolean;
 	newWindow: boolean;
 }
 
 export const CLink = (props: CLinkProps): JSX.Element => {
-	const borderClasses = ['border', 'border-solid', 'border-gray-300'];
-	let classes = ['rounded-2xl', 'text-sm', 'px-2', 'py-1.5', 'no-underline']
-		.concat(props.classes ?? []);
-	if (props.hasBorder) {
-		classes = classes.concat(borderClasses);
-	}
+	const borderClasses = classnames('border', 'border-solid', 'border-gray-300');
+	const classes = classnames('rounded-2xl', 'text-sm', 'px-2', 'py-1.5', 'no-underline');
 	return <a
 		href={props.url}
 		target={props.newWindow ? '_blank' : '_self'}
-		className={classNames((classes))} rel="noreferrer">
+		className={classnames(borderClasses, classes)} rel="noreferrer">
 		{props.children}
 	</a>;
 };

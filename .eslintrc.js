@@ -45,6 +45,7 @@ module.exports = {
 		'semi': [
 			'error',
 			'always'
-		]
+		],
+		'no-mixed-spaces-and-tabs':0,
 	}
 };

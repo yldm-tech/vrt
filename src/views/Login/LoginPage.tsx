@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import React from 'react';
-import classNames from 'classnames';
+import { classnames } from 'tailwindcss-classnames';
 import { RouteComponentProps } from 'react-router-dom';
 import { CButton } from '@/components/Common/CButton';
 import { CInput } from '@/components/Common/CInput';
@@ -23,11 +23,11 @@ const LoginPage = (props: Props): JSX.Element => {
 
 
 	return (
-		<div className={classNames('flex', 'justify-center', 'items-center', 'w-screen', 'h-screen', 'bg-gray-100')}>
+		<div className={classnames('flex', 'justify-center', 'items-center', 'w-screen', 'h-screen', 'bg-gray-100')}>
 			<div id="login-container"
-				 className={classNames('flex', 'justify-center', 'text-center', 'w-96', 'bg-white')}>
+				 className={classnames('flex', 'justify-center', 'text-center', 'w-96', 'bg-white')}>
 				<div id="login-content">
-					<div id="login-title" className={classNames('my-4')}>
+					<div id="login-title" className={classnames('my-4')}>
 						{t('Login')}
 					</div>
 					<CInput/>
