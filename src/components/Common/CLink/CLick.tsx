@@ -11,11 +11,14 @@ export interface CLinkProps {
 
 export const CLink = (props: CLinkProps): JSX.Element => {
 	const borderClasses = classnames('border', 'border-solid', 'border-gray-300');
-	const classes = classnames('rounded-2xl', 'text-sm', 'px-2', 'py-1.5', 'no-underline');
+	let classes = classnames('rounded-2xl', 'text-sm', 'px-2', 'py-1.5', 'no-underline');
+	if (props.hasBorder) {
+		classes = classnames(borderClasses, classes);
+	}
 	return <a
 		href={props.url}
 		target={props.newWindow ? '_blank' : '_self'}
-		className={classnames(borderClasses, classes)} rel="noreferrer">
+		className={classes} rel="noreferrer">
 		{props.children}
 	</a>;
 };
