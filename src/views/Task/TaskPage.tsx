@@ -1,5 +1,5 @@
 import React from 'react';
-import { CHeader } from '@/layouts/Header';
+import { CHeader } from '@/components/CHeader/CHeader';
 
 const Task = (): JSX.Element => (
 	<>

@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import React from 'react';
 import classNames from 'classnames';
 import { RouteComponentProps } from 'react-router-dom';
-import { CButton } from '@/components/common/CButton';
-import { CInput } from '@/components/common/CInput';
+import { CButton } from '@/components/Common/CButton';
+import { CInput } from '@/components/Common/CInput';
 
 interface Props {
 	history: RouteComponentProps['history'];

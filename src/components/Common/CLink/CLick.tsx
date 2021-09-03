@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-interface CLinkProps {
+export interface CLinkProps {
 	children: string;
 	classes?: string[];
 	url: string;

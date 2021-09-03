@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-interface CButtonProps {
+export interface CButtonProps {
 	children: string;
 	classes?: string[];
 	click?: () => void;

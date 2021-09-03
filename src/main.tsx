@@ -6,8 +6,9 @@ import store from '@/redux/store';
 import '@/assets/styles/index.css';
 
 import '@/i18n';
-import { CFullLoading } from '@/components/common/CFullLoading';
+import { CFullLoading } from '@/components/Common/CFullLoading';
 import { Route } from 'react-router';
+import NotFound from '@/views/NotFound';
 
 const Home = lazy(() => import('@/views/Home'));
 const Task = lazy(() => import('@/views/Task'));
@@ -24,6 +25,7 @@ const App = (): JSX.Element => {
 				<Route path="/task" component={Task}/>
 				<Route path="/add" component={Add}/>
 				<Route path="/login" component={Login}/>
+				<Route path="/404" component={NotFound}/>
 				<Redirect to="/404"/>
 			</Switch>
 		</Suspense>

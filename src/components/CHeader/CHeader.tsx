@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { CNavLink } from '@/components/common/CNavLink';
+import { CNavLink } from '@/components/Common/CNavLink/CNavLink';
 import { faHome, faPlus, faTasks } from '@fortawesome/free-solid-svg-icons';
 
 export const CHeader = (): JSX.Element => {

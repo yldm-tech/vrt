@@ -1,7 +1,7 @@
 import React from 'react';
-import { CPartialLoading } from '@/components/common/CLoading';
+import { CPartialLoading } from '@/components/Common/CPartialLoading/CPartialLoading';
 
-interface ContainerProps {
+export interface ContainerProps {
 	loading: boolean;
 	classes?: string[];
 	component: JSX.Element;

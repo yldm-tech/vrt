@@ -2,13 +2,13 @@ import React from 'react';
 import ReactLoading from 'react-loading';
 import classNames from 'classnames';
 
-interface LoadingProps {
+export interface CPartialLoadingProps {
 	type?: undefined,
 	color?: string,
 	classes?: string[]
 }
 
-export const CPartialLoading = (props: LoadingProps): JSX.Element => {
+export const CPartialLoading = (props: CPartialLoadingProps): JSX.Element => {
 	const common = ['flex', 'w-full', 'items-center', 'justify-center'];
 	const styles = common.concat(props.classes || []);
 	return <div className={classNames(styles)}>
