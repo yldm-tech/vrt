@@ -29,9 +29,9 @@ export default defineConfig({
 		cors: true,
 		port: process.env.VITE_PORT as unknown as number,
 		hmr: {
-			host: process.env.VITE_HOST,
-			protocol: 'wss',
-			port: 443
+			host: 'localhost',
+			protocol: 'ws',
+			port: process.env.VITE_PORT as unknown as number,
 		}
 	}
 });
