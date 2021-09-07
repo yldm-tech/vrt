@@ -1,6 +1,6 @@
 {
-  "name": "vite-react",
-  "version": "0.0.0",
+  "name": "vite-react-teamplate",
+  "version": "0.0.1",
   "scripts": {
     "dev": "cross-env NODE_ENV=local vite --host",
     "dev:stg": "cross NODE_ENV=stg vite",
