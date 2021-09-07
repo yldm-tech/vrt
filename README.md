@@ -20,8 +20,7 @@
     │   ├── images                   图片资源
     │   └── styles                   全局样式
     ├── components                 组件
-    │   ├── CHeader                  头部
-    │   ├── CFooter                  底部
+    │   ├── CFooter                  头部
     │   └── Common                 通用组件
     │       ├── CButton
     │       ├── CContainer
