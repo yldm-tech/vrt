@@ -56,5 +56,5 @@
 # todoList screenshots
 ![launch](screenshots/launch.webp)
 ![add](screenshots/add.png)
-![list](screenshots/list.webp)
+![list](screenshots/list.png)
 ![task](screenshots/task.webp)
