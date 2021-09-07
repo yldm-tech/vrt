@@ -13,15 +13,16 @@
 # 目录结构
 
 ```
-├── envs                多环境配置文件
-└── src
-    ├── assets
-    │   ├── i18n
-    │   ├── images
-    │   └── styles
-    ├── components
-    │   ├── CHeader
-    │   └── Common
+├── envs                          多环境配置文件
+└── src                           工程核心代码
+    ├── assets                    资源文件
+    │   ├── i18n                     国际化翻译文件
+    │   ├── images                   图片资源
+    │   └── styles                   全局样式
+    ├── components                 组件
+    │   ├── CHeader                  头部
+    │   ├── CFooter                  底部
+    │   └── Common                 通用组件
     │       ├── CButton
     │       ├── CContainer
     │       ├── CFullLoading
@@ -29,24 +30,24 @@
     │       ├── CLink
     │       ├── CNavLink
     │       └── CPartialLoading
-    ├── i18n
-    ├── redux
-    ├── service
-    ├── utils
-    └── views
-        ├── Add
-        ├── Home
-        ├── Login
-        ├── NotFound
-        └── Task
-├── tsconfig.json       ts配置
-├── vite.config.ts      vite配置
-├── .eslintrc.js        eslint配置
-├── README.md           项目说明文件
-├── index.html          项目入口文件
-├── node_modules        项目依赖包
-├── package.json        项目依赖声明文件
-├── .env                本地环境（如果没有的话会使用envs/.env.local）
-└── yarn.lock           yarn文件锁
+    ├── i18n                         国际化代码实现
+    ├── redux                        状态管理(slice和store)
+    ├── service                      业务服务(http交互)
+    ├── utils                        通用方法
+    └── views                        页面
+        ├── Add                        添加todo
+        ├── Home                       todoList
+        ├── Login                      登陆页面
+        ├── NotFound                   404
+        └── Task                       taskList
+├── tsconfig.json                     ts配置
+├── vite.config.ts                    vite配置
+├── .eslintrc.js                      eslint配置
+├── README.md                         项目说明文件
+├── index.html                        项目入口文件
+├── node_modules                      项目依赖包
+├── package.json                      项目依赖声明文件
+├── .env                              本地环境（如果没有的话会使用envs/.env.local）
+└── yarn.lock                         yarn文件锁
 
 ```
