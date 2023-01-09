@@ -3,7 +3,7 @@ import { CPartialLoading } from '@/components/Common/CPartialLoading/CPartialLoa
 
 export interface ContainerProps {
 	loading: boolean;
-	classes?: string[];
+	classes?: string;
 	component: JSX.Element;
 
 }

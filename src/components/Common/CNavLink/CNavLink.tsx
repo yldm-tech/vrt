@@ -8,7 +8,7 @@ export const CNavLink = (props: NavLinkProps): JSX.Element => {
 	// <NavLink children={this.props.children} />
 	// 功能等同于  angular的 ng-container， vue的 slot
 	return (
-		<NavLink activeClassName="active" {...props} />
+		<NavLink  {...props} />
 	);
 };
 
