@@ -1,7 +1,8 @@
 module.exports = {
 	'env': {
 		'browser': true,
-		'es2021': true
+		'es2021': true,
+		node: true,
 	},
 	'extends': [
 		'eslint:recommended',
@@ -31,8 +32,7 @@ module.exports = {
 	],
 	'rules': {
 		'indent': [
-			'error',
-			'tab'
+			'off',
 		],
 		'linebreak-style': [
 			'error',
@@ -46,6 +46,7 @@ module.exports = {
 			'error',
 			'always'
 		],
+		'@typescript-eslint/no-var-requires': 'off',
 		'no-mixed-spaces-and-tabs':0,
 	}
 };

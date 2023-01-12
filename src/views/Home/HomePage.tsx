@@ -3,10 +3,8 @@ import { CHeader } from '@/components/CHeader/CHeader';
 
 const Home = (): JSX.Element => (
 	<div>
+		Home
 		<CHeader/>
-		<h1 className="text-3xl font-bold underline">
-			Hello world!
-		</h1>
 	</div>
 );
 
