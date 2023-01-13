@@ -1,1 +1,0 @@
-export { CFullLoading } from './CFullLoading';
